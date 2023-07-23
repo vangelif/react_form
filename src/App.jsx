@@ -1,21 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Login from './components/Login';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import Register from './components/Register';
-import UserList from './components/UserList';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
+import countries from './components/data/countries';
+import UserSettings from './components/UserSettings'; //
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/user-list" component={UserList} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+          <Login />
+          </Route>
+          <Route path="/register">
+            <Register countries={countries} />
+          </Route>
+          <Route path="/user-settings">
+            <UserSettings />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
