@@ -93,7 +93,7 @@ You can deploy this project using:
 
 ### Live <a name="live"></a>
 
-- [Live Demo: Countries Stats](https://clinquant-crostata-448227.netlify.app/)
+- [Live Demo: React Form](https://clinquant-crostata-448227.netlify.app/)
 
 <!-- ### Video <a name="video"></a>
 
